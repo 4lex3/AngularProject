@@ -1,0 +1,17 @@
+<div class="carousel">
+
+    @let currentImage = getCurrentImage();
+
+    <img [src]="currentImage.urlImage" [alt]="currentImage.urlImage" class="carouselImg" 
+        [ngClass]="{'active': imageLoad}"  
+    >
+
+
+    <button (click)="previousImage()" class="left">
+        <mat-icon class="icon-large">chevron_left</mat-icon>
+    </button>
+
+    <button (click)="nextImage()" class="right">
+        <mat-icon class="icon-large">chevron_right</mat-icon>
+    </button>
+</div>

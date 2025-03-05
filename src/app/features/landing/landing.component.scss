@@ -1,0 +1,32 @@
+@use '../../shared/sass/theme.scss' as *;
+@use '../../shared/sass/mixins/transitions.scss' as *;
+@use '../../shared/sass/mixins/breakpoints.scss' as *;
+
+a {
+    color: $semiDark;
+    font-weight: 600;
+    margin-top: 1rem;
+
+    @include screen(sm) {
+        margin: 0;
+    }
+}
+
+a:hover {
+    @include transitionScale(1.1);
+    text-decoration: underline;
+}
+
+.main {
+
+    margin: 1rem;
+
+    .article {
+        background-color: red;
+    }
+
+
+
+
+
+}

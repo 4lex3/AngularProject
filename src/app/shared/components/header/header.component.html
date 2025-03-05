@@ -1,13 +1,12 @@
 <header class="header">
 
-    <h1>{{headerTitle}}</h1>
+    <h1 class="header__title">{{headerTitle}}</h1>
 
-    <button (click)="onClickButtonOptions()">
+    <button class="header__button" (click)="onClickButtonOptions()">
         <mat-icon>menu</mat-icon>
     </button>
-
     
-    <div class="headerLinks" [ngClass]="showMobileOptions === false ? 'headerLinksHidden': ''">
+    <div class="header__links" [ngClass]="showMobileOptions === false ? 'header__links--hidden': ''">
         <ng-content></ng-content>
     </div>
 

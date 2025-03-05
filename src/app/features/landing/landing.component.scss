@@ -6,10 +6,6 @@ a {
     color: $semiDark;
     font-weight: 600;
     margin-top: 1rem;
-
-    @include screen(sm) {
-        margin: 0;
-    }
 }
 
 a:hover {

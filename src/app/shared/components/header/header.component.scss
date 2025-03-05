@@ -1,6 +1,6 @@
-@use '../../sass//theme.scss' as *;
-@use '../../sass/mixins/breakpoints.scss' as *;
-
+@use '../../sass//theme' as *;
+@use '../../sass/mixins/breakpoints' as *;
+@use '../../sass/mixins/generic' as *;
 
 .header {
 
@@ -10,30 +10,50 @@
     display: grid;
     grid-template-columns: 90% 1fr;
     grid-template-rows: 1fr;
-    transition: all 0.5s ease-in-out;
 
-    h1 {
+
+    &__title {
         grid-row: 1 / 1;
     }
 
-    .headerLinks {
+    &__links {
         grid-column: 1 / -1;
         display: flex;
-        justify-content: space-around; 
-    } 
+        justify-content: space-around;
+        max-height: 500px;
+        transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out;
 
-    .headerLinksHidden {
-        display: none;
+
+    }
+
+    &__links--hidden {
+        max-height: 0;
+        opacity: 0;
+    }
+
+    &__button {
+        @include flexCenter();
     }
 
 }
 
+@include screen(lg) {
+
+    .header {
+
+        display: flex;
+        justify-content: space-around;
 
 
+        &__links {
+            max-height: none;
+            opacity: 1;
+            overflow: visible;
+            gap: 2rem;
+        }
 
-
-
-
-
-
-
+        &__button {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,69 @@
+@use '../../sass/theme' as *;
+@use '../../sass/mixins/transitions' as *;
+
+
+button {
+    color: $dark;
+    @include transitionAllDelay(0.2s, 0.3s);
+}
+
+.audioContainer {
+
+    border-radius: 5px;
+    background-color: $ultraLight;
+    color: $dark;
+    display: grid;
+    grid-template-columns: 80% 1fr;
+    grid-template-rows: 50% 50%;
+    padding: 1rem;
+    overflow: hidden;
+    @include transitionAllDelay(0.2s, 0.3s);
+
+
+    &__title {
+        grid-column: 1 / span 1;
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 0.825rem;
+        gap: 1rem;
+    }
+
+    &__favorite {
+        grid-column: 2 / span 2;
+        grid-row: 1 / span 1;
+        display: flex;
+        justify-content: flex-end;
+        color: rgb(167, 167, 167);
+
+        &--active {
+            color: lightcoral;
+        }
+    }
+
+
+    &__controls {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+
+    &:hover {
+
+        background-color: $medium;
+        color: $ultraLight;
+
+        button { color: $ultraLight; }
+
+        .audioContainer__favorite--active {
+            color: red;
+        }
+    }
+
+}
+
+.button-active {
+    color: $dark;
+}

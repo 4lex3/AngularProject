@@ -1,5 +1,13 @@
+@mixin customScale($scale){
+    scale: $scale;
+}
+
 .icon-large {
     scale: 3;
+}
+
+.icon-medium {
+    scale: 2;
 }
 
 .icon-sm {

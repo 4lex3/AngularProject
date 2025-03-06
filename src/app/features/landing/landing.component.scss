@@ -1,6 +1,7 @@
 @use '../../shared/sass/theme.scss' as *;
 @use '../../shared/sass/mixins/transitions.scss' as *;
 @use '../../shared/sass/mixins/breakpoints.scss' as *;
+@use '../../shared/sass/icons' as *;
 
 a {
     color: $semiDark;
@@ -14,15 +15,24 @@ a:hover {
 }
 
 .main {
-
     margin: 1rem;
 
-    .article {
-        background-color: red;
+    &__article {
     }
+}
 
 
+mat-icon {
+    color: $ultraLight;
+    @include customScale(1.2);
+}
 
+.footer__social--items {
+    display: flex;
+    gap: 1rem;
+}
 
-
+.footer__columns--items {
+    display: flex; 
+    justify-content: space-around;
 }

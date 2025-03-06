@@ -3,7 +3,7 @@
     <h1 class="header__title">{{headerTitle}}</h1>
 
     <button class="header__button" (click)="onClickButtonOptions()">
-        <mat-icon>menu</mat-icon>
+        <mat-icon>{{!showMobileOptions ? 'menu' : 'menu_open' }}</mat-icon>
     </button>
     
     <div class="header__links" [ngClass]="showMobileOptions === false ? 'header__links--hidden': ''">

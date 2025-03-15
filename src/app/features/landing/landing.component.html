@@ -8,112 +8,60 @@
 <main class="main">
 
     <article class="main__article">
-        <app-music-player [audios]="songs"/>
+        <h3>Music & video:</h3>
+        <app-music-player [audios]="songs" />
     </article>
 
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
-    <h1>XDD</h1>    
+    <article class="main__article">
+        <h3>SVGs:</h3>
+        <app-music-player [audios]="songs" />
+    </article>
+
+    <article class="main__article">
+        <h3>Image Galery:</h3>
+        <app-music-player [audios]="songs" />
+    </article>
+
+
+    <article class="main__article--form">
+        <h3>Contact with me!</h3>
+
+        <app-form [onSubmit]="onSubmitForm">
+            <ng-container class="formInputs">
+                <app-input (getValue)="validateForm($event)" [name]="'name'" [placeHolder]="'Name'"/>
+                <app-input (getValue)="validateForm($event)" [name]="'email'" [placeHolder]="'E-mail'" [type]="'email'"/>
+                <app-input (getValue)="validateForm($event)" [name]="'message'" [placeHolder]="'Type your message'" [textArea]="true"/>
+            </ng-container>
+
+            <ng-container class="formButtons">
+
+                <app-button 
+                    [text]="'Submit'" 
+                    [type]="'submit'" 
+                    [disabled]="true" 
+                    [enableWhen]="formIsValid"
+                />
+
+            </ng-container>
+        </app-form>
+
+        <app-modal [openModal]="openModal" (getModalState)="getModalState($event)">
+            <ng-container class="modal__header">
+                <h3>KAJSDKAJDLAJSSJD</h3>
+            </ng-container>
+
+            <ng-container class="modal__body">
+                <h3>KAJSDKAJDLAJSSJD</h3>
+            </ng-container>
+        </app-modal>
+
+    </article>
+
 
 
 </main>
+
+
 
 <app-footer>
     <div class="footer__columns--items">

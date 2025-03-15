@@ -3,4 +3,25 @@
     <label class="label" for="{{name}}">{{label}}</label>
 }
 
-<input class="input" name="{{name}}" [placeholder]="placeHolder" [type]="type">
+@if (textArea) {
+
+    <textarea 
+        class="input" 
+        name="{{name}}" 
+        [placeholder]="placeHolder" 
+        [attr.required]="required ? '' : null"
+        [(ngModel)]="value"
+        (ngModelChange)="emitValue()"
+    ></textarea>
+
+} @else {
+
+    <input 
+        class="input" 
+        name="{{name}}" 
+        [placeholder]="placeHolder" 
+        [attr.required]="required ? '' : null"
+        [(ngModel)]="value"
+        (ngModelChange)="emitValue()"
+    >
+}

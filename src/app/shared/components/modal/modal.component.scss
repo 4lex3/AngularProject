@@ -1,0 +1,53 @@
+@use '../../sass/theme' as *;
+@use '../../sass/icons' as *;
+
+.modal {
+
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $ultraLight;
+
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.9);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    &__content {
+        background-color: red; 
+        padding: 1.5rem;
+        border-radius: 10px;
+        background-color: $dark; 
+        width: 70%;
+        max-width: 700px;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        &--header {
+            display: grid;
+            grid-template-columns: 9fr 1fr;
+
+            &__button {
+                grid-column: -1;
+            }
+        }
+
+        &--body {
+            
+        }
+    }
+
+}
+
+.modalShow {
+  opacity: 1; 
+  pointer-events: auto; 
+  transform: scale(1); 
+}

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -7,16 +7,15 @@ import { Component, Input } from '@angular/core';
   styleUrl: './button.component.scss'
 })
 export class ButtonComponent {
-
   @Input() text!: string;
-  @Input() handleClick!: Function;;
+  @Input() type: string = "";
 
+  @Input() disabled: boolean = false;
+  @Input() enableWhen: boolean = false;
 
-
-
-  
-
-  
+  @Input() handleClick: (event: Event) => void = (event: Event) => {
+    console.log('Handle click default behavior', event);
+  };
 
 
 }

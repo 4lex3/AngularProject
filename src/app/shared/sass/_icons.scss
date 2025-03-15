@@ -1,5 +1,11 @@
+@use '../../shared/sass/theme' as *;
+
 @mixin customScale($scale){
     scale: $scale;
+}
+
+.icon-light {
+    color: $ultraLight;
 }
 
 .icon-large {

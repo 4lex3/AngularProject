@@ -1,1 +1,9 @@
-<button (click)="handleClick()" class="button">{{ text }}</button>
+<button 
+    (click)="handleClick($event)" 
+    class="button" 
+    [attr.type]="type || null"
+    [disabled]="disabled ? !enableWhen : false"
+>{{ text }}</button>
+
+
+

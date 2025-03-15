@@ -5,31 +5,26 @@
         <p>{{ currentAudio.name }}.{{currentAudio.format}}</p>
     </div>
 
-    <audio [src]="currentAudio.src"></audio>
+    <audio #audio [src]="currentAudio.src" (timeupdate)="onProgress()"></audio>
 
-    <button 
-        (click)="onClickFavorite()" class="audioContainer__favorite"
-        [ngClass]="isFavorite ? 'audioContainer__favorite--active' : ''"
-    >
+    <button (click)="onClickFavorite()" class="audioContainer__favorite"
+        [ngClass]="isFavorite ? 'audioContainer__favorite--active' : ''">
         <mat-icon>favorite</mat-icon>
     </button>
 
     <div class="audioContainer__controls">
 
-        <button><mat-icon>skip_previous</mat-icon></button>
+        <button (click)="previousSong()"><mat-icon>skip_previous</mat-icon></button>
 
-        <button 
-            (click)="onPlaying()"
-        >
+        <button (click)="onPlaying()">
             <mat-icon>{{isPlaying ? 'pause' : 'play_arrow' }}</mat-icon>
         </button>
 
-        <button><mat-icon>skip_next</mat-icon></button>
+        <button (click)="nextSong()"><mat-icon>skip_next</mat-icon></button>
 
-        <input type="range" min="0" max="100">
-        <button
-            (click)="onClickVolume()" 
-        >
+        <input class="audioContainer__controls--input" [value]="inputProgress" (input)="onChangeInputElement($event)" type="range" min="0" max="100">
+
+        <button (click)="onClickVolume()">
             <mat-icon>{{isPlayingVolume ? 'headphones': 'volume_up'}}</mat-icon>
         </button>
 

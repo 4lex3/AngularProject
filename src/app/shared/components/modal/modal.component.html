@@ -1,0 +1,16 @@
+<div class="modal"
+    [ngClass]="{'modalShow': isOpen}" 
+>
+    <div class="modal__content ">
+
+        <div class="modal__content--header">
+            <ng-content select=".modal__header"></ng-content>
+            <button (click)="closeModal()" class="modal__content--header__button"><mat-icon class="icon-light">close</mat-icon></button>
+        </div>
+
+        <div class="modal__content--body">
+            <ng-content select=".modal__body"></ng-content>
+        </div>
+
+    </div> 
+</div>

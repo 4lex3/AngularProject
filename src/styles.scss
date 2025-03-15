@@ -4,26 +4,29 @@
 @use './app/shared/sass/theme.scss' as *;
 
 html {
-  @include mat.theme((
-    color: (
-      theme-type: light,
-      primary: mat.$azure-palette,
-      tertiary: mat.$blue-palette,
-    ),
-    typography: Roboto,
-    density: 0,
-  ));
-}/* You can add global styles to this file, and also import other style files */
+  @include mat.theme((color: (theme-type: light,
+        primary: mat.$azure-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    ));
+}
+
+/* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
-    padding: 0;
-    margin: 0;
-    border: 0;
-    box-sizing: border-box;
-    font-family: "Raleway", serif;
-    text-decoration: none;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", serif;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
 }
+
 
 body {
   background-color: $dark;
@@ -33,4 +36,3 @@ button {
   background-color: transparent;
   cursor: pointer;
 }
-

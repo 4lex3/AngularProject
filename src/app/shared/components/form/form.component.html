@@ -1,3 +1,9 @@
-<form (submit)="onSubmit()" [method]="method">
-    <ng-content></ng-content>
+<form class="form" (submit)="onSubmit($event)" [method]="method">
+    <div class="form__inputsContainer">
+        <ng-content select=".formInputs"></ng-content>
+    </div>
+
+    <div class="form__buttonsContainer">
+        <ng-content select=".formButtons"></ng-content>
+    </div>
 </form>

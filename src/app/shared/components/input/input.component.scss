@@ -1,8 +1,8 @@
 @use '../../sass/theme.scss' as *;
+@use '../../sass/mixins/breakpoints' as *;
 
 .input {
 
-    padding: 1rem;
     font-size: 1.2rem;
     background-color: $dark;
     border-radius: 10px;
@@ -10,10 +10,17 @@
     color: $light;
     font-weight: 600;
     transition: all 0.5s;
-
+    padding: 0.6rem;
 }
 
 .input:focus {
-    background-color: $semiDark;
+    outline: none;
+    background-color: $ultraDark;
     border: 2px solid $medium;
+}
+
+@include screen(md){
+    .input {
+        min-width: 600px;
+    } 
 }

@@ -3,23 +3,27 @@
 
 
 .button {
-    background-color: $dark;
-    padding: 1rem 2rem;
+    font-size: 1rem;
+    background-color: $ultraDark;
+    padding: 0.825rem 2rem;
     border-radius: 10px;
     color: $ultraLight;
-    transition: all 0.3s;
+    transition: background 0.3s;
+
+
+    &:hover {
+        background-color: $light;
+        color: $dark;
+        @include transitionScale(1.0500)
+    }
+
+    &:active {
+        background-color: $ultraLight;
+    }
+
+    &:disabled {
+        color: gray;
+        background-color: $ultraDark;
+    }
 }
-
-.button:hover {
-    background-color: $light;
-    border: 2px solid $semiDark;
-    color: $dark;
-    @include transitionScale(1.1);
-}
-
-.button:active{
-    background-color: $ultraLight;
-}
-
-
 

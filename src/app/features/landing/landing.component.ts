@@ -14,11 +14,14 @@ import { VideoPlayerComponent } from "../../shared/components/video-player/video
 import { AnnotationComponent } from "../../shared/components/annotation/annotation.component";
 import { CommonModule } from '@angular/common';
 import { Social, Socials } from '../../core/models/Socials';
+import { CarouselComponent } from "../../shared/components/carousel/carousel.component";
+import { ICarousel } from '../../shared/components/carousel/models/Carousel';
+import { CarouselStates } from '../../core/models/Carousel';
 
 
 @Component({
   selector: 'app-landing',
-  imports: [HeaderComponent, MatIconModule, FooterComponent, MusicPlayerComponent, FormComponent, InputComponent, ButtonComponent, ModalComponent, VideoPlayerComponent, AnnotationComponent, CommonModule],
+  imports: [HeaderComponent, MatIconModule, FooterComponent, MusicPlayerComponent, FormComponent, InputComponent, ButtonComponent, ModalComponent, VideoPlayerComponent, AnnotationComponent, CommonModule, CarouselComponent],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.scss'
 })
@@ -30,6 +33,7 @@ export class LandingComponent implements OnInit{
   public iconService = inject(IconsService);
   public annotationHover: boolean = false;
   public socials: Social[] = Socials;
+  public carouselImages: ICarousel[] = CarouselStates;
 
   private formValues: Record<string, string> = {
     name:  "",

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ICarousel } from './models/Carousel';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
@@ -9,20 +9,22 @@ import { CommonModule } from '@angular/common';
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss']
 })
-export class CarouselComponent {
+export class CarouselComponent implements OnInit {
 
   @Input({ required: true }) carouselObj!: ICarousel[];
-  private index: number = 0;
   public imageLoad: boolean = false;
 
-  public getCurrentImage() {
-    return this.carouselObj[this.index];
+  private index: number = 0;
+
+  ngOnInit(): void {
+    this.nextImage = this.nextImage.bind(this);
+    this.previousImage = this.nextImage.bind(this);
   }
 
   public nextImage(): ICarousel {
 
+    this.imageLoad = false;
     this.index++;
-    this.imageLoad = false; 
 
     if (this.index >= this.carouselObj.length) {
       this.index = 0;
@@ -32,8 +34,9 @@ export class CarouselComponent {
   }
 
   public previousImage(): ICarousel {
+
+    this.imageLoad = false;
     this.index--;
-    this.imageLoad = false; 
 
     if (this.index < 0) {
       this.index = this.carouselObj.length - 1;
@@ -42,4 +45,11 @@ export class CarouselComponent {
     return this.carouselObj[this.index];
   }
 
+  onImageLoad(): void {
+    this.imageLoad = true;
+  }
+
+  public getCurrentImage() : ICarousel {
+    return this.carouselObj[this.index];
+  }
 }

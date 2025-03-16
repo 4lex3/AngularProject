@@ -20,38 +20,46 @@
                         [ngClass]="{'icon-annotation-activate': annotationHover}" svgIcon="annotation"></mat-icon>
                 </ng-container>
 
-                <ng-container class="annotation--content">
-                    <h1>Content</h1>
-                    <h1>Content</h1>
-                    <h1>Content</h1>
-                    <h1>Content</h1>
-                    <h1>Content</h1>
-                    <h1>Content</h1>
-                    <h1>Content</h1>
-                    <h1>Content</h1>
-                    <h1>Content</h1>
-                    <h1>Content</h1>
-                    <h1>Content</h1>
-                    <h1>Content</h1>
-                    <h1>Content</h1>
-                    <h1>Content</h1>
-                    <h1>Content</h1>
-                    <h1>Content</h1>
-                    <h1>Content</h1>
-                    <h1>Content</h1>
-                    <h1>Content</h1>
-                    <h1>Content</h1>
-                    <h1>Content</h1>
-                    <h1>Content</h1>
-                    <h1>Content</h1>
-                    <h1>Content</h1>
-                    <h1>Content</h1>
-                    <h1>Content</h1>
-                    <h1>Content</h1>
-                    <h1>Content</h1>
-                    <h1>Content</h1>
-                    <h1>Content</h1>
-                </ng-container>
+                <div class="annotation--content">
+
+
+                    <h1>Best Video and Audio Formats for the Web</h1>
+
+                    <h2>Video:</h2>
+
+                    <ul>
+                        <li><strong>MP4 (H.264 + AAC):</strong> High compatibility, good quality, and compression.
+                        </li>
+                        <li><strong>WebM (VP8/VP9 + Opus/Vorbis):</strong> Patent-free, good quality, but less
+                            compatible with Safari.</li>
+                        <li><strong>OGG (Theora + Vorbis):</strong> Patent-free, compatible with Firefox, but less
+                            used.
+                        </li>
+                        <li><strong>AVI:</strong> High quality, but large files affect load time.</li>
+                    </ul>
+
+
+                    <h2>Audio:</h2>
+
+                    <ul>
+                        <li><strong>MP3:</strong> Highly compatible, good quality, and compression.</li>
+                        <li><strong>AAC:</strong> Better quality than MP3 at similar bit rates.</li>
+                        <li><strong>OGG (Vorbis):</strong> Patent-free, good quality, but less compatible.</li>
+                        <li><strong>Opus:</strong> Excellent quality, ideal for voice and real-time streaming.</li>
+                    </ul>
+
+
+                    <h2>Summary:</h2>
+
+                    <ul>
+                        <li><strong>Video:</strong> <em>MP4</em> is the most compatible, <em>WebM</em> is great for
+                            modern compression.</li>
+                        <li><strong>Audio:</strong> <em>MP3</em> is universal, <em>AAC</em> is better for quality,
+                            <em>Opus</em> is best for streaming.
+                        </li>
+                    </ul>
+
+                </div>
             </app-annotation>
         </div>
 
@@ -59,11 +67,12 @@
 
     <article class="main__article">
         <h3>SVGs:</h3>
+
     </article>
 
     <article class="main__article">
         <h3>Image Gallery:</h3>
-        <app-music-player [audios]="songs" />
+        <app-carousel [carouselObj]="carouselImages"/>
     </article>
 
 
@@ -98,7 +107,6 @@
 
 </main>
 
-
 <app-footer>
 
     <div class="footer__columns--items">
@@ -120,7 +128,7 @@
 
     <div class="footer__social--items">
         @for (social of socials; track social.id) {
-            <a [href]="social.link"><mat-icon class="icon-light" svgIcon="{{social.icon}}"></mat-icon></a>
+        <a [href]="social.link"><mat-icon class="icon-light" svgIcon="{{social.icon}}"></mat-icon></a>
         }
     </div>
 

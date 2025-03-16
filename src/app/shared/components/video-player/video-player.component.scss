@@ -1,6 +1,13 @@
 @use '../../sass/theme' as *;
 @use '../../sass/mixins/breakpoints' as *;
 
+@keyframes backgroundAnimation {
+  0% {background-color: #463748; }
+  50% { background-color: #282f39; }
+  100% { background-color: #39242f; }
+}
+
+
 .video-container {
 
     position: relative; 
@@ -8,22 +15,22 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    background: $ultraDark;
     border-radius: 10px;
     overflow: hidden;
+    animation: backgroundAnimation 10s infinite alternate ease-in-out;
     background-color: $dark;
-    object-fit: contain;
+    height: 100%;
+    display: flex;
+    justify-content: center;
 
     video {
-        width: 100%; 
-        height: auto; 
-        object-fit: contain; 
+        width: 100%;
+        object-fit: cover;
     }
 
 }
 
 .video-controls {
-    background: rgba(31, 25, 47, 0.85);
     backdrop-filter: blur(8px);
     padding: 12px;
     border-radius: 0 0 10px 10px;
@@ -35,8 +42,8 @@
     bottom: 0;           
     left: 0;             
     right: 0;            
-    background: rgba(31, 25, 47, 0.85);
-
+    background-color: rgba(37, 37, 37, 0.266);
+    
     button {
         background: none;
         border: none;

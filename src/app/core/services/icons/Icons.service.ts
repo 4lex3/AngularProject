@@ -8,15 +8,16 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class IconsService {
 
+  public icons: string[] = ['github', 'telegram', 'whatsapp', 'yt', 'annotation'];
+
   constructor(private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer) {
     this.registerCustomIcons();
   }
 
   registerCustomIcons(): void {
 
-    const icons: string[] = ['github', 'telegram', 'whatsapp', 'yt'];
 
-    icons.forEach(iconName=> {
+    this.icons.forEach(iconName => {
       this.iconRegistry.addSvgIcon(
         iconName,
         this.sanitizer.bypassSecurityTrustResourceUrl(`svg/icons/${iconName}.svg`)

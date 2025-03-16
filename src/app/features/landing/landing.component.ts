@@ -11,11 +11,14 @@ import { InputComponent } from "../../shared/components/input/input.component";
 import { ButtonComponent } from "../../shared/components/button/button.component";
 import { ModalComponent } from "../../shared/components/modal/modal.component";
 import { VideoPlayerComponent } from "../../shared/components/video-player/video-player.component";
+import { AnnotationComponent } from "../../shared/components/annotation/annotation.component";
+import { CommonModule } from '@angular/common';
+import { Social, Socials } from '../../core/models/Socials';
 
 
 @Component({
   selector: 'app-landing',
-  imports: [HeaderComponent, MatIconModule, FooterComponent, MusicPlayerComponent, FormComponent, InputComponent, ButtonComponent, ModalComponent, VideoPlayerComponent],
+  imports: [HeaderComponent, MatIconModule, FooterComponent, MusicPlayerComponent, FormComponent, InputComponent, ButtonComponent, ModalComponent, VideoPlayerComponent, AnnotationComponent, CommonModule],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.scss'
 })
@@ -25,6 +28,8 @@ export class LandingComponent implements OnInit{
   public formIsValid: boolean = false;
   public openModal: boolean = false;
   public iconService = inject(IconsService);
+  public annotationHover: boolean = false;
+  public socials: Social[] = Socials;
 
   private formValues: Record<string, string> = {
     name:  "",
@@ -56,6 +61,10 @@ export class LandingComponent implements OnInit{
 
   public getModalState(modalState: boolean): void {
     this.openModal = modalState;    
+  }
+
+  public handleHover(isAnHover: boolean) : void{
+    this.annotationHover = isAnHover;
   }
 
 }

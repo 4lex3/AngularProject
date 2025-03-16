@@ -8,18 +8,61 @@
 <main class="main">
 
     <article class="main__article--multimedia">
-        <div class=""><h3>Music & video:</h3></div>
-        <div class="main__article--multimedia__music"><app-music-player [audios]="songs"/></div>
-        <div class="main__article--multimedia__video"><app-video-player [videoSrc]="'video/thisCold.mp4'"/></div>
+
+        <h3>Music & video:</h3>
+        <div class="main__article--multimedia__music"><app-music-player [audios]="songs" /></div>
+        <div class="main__article--multimedia__video"><app-video-player [videoSrc]="'video/thisCold.mp4'" /></div>
+
+        <div class="main__article--multimedia__annotation">
+            <app-annotation (onCoverHover)="handleHover($event)">
+                <ng-container class="annotation--cover">
+                    <mat-icon class="icon-transition icon-reset icon-disabled icon-ultraLarge"
+                        [ngClass]="{'icon-annotation-activate': annotationHover}" svgIcon="annotation"></mat-icon>
+                </ng-container>
+
+                <ng-container class="annotation--content">
+                    <h1>Content</h1>
+                    <h1>Content</h1>
+                    <h1>Content</h1>
+                    <h1>Content</h1>
+                    <h1>Content</h1>
+                    <h1>Content</h1>
+                    <h1>Content</h1>
+                    <h1>Content</h1>
+                    <h1>Content</h1>
+                    <h1>Content</h1>
+                    <h1>Content</h1>
+                    <h1>Content</h1>
+                    <h1>Content</h1>
+                    <h1>Content</h1>
+                    <h1>Content</h1>
+                    <h1>Content</h1>
+                    <h1>Content</h1>
+                    <h1>Content</h1>
+                    <h1>Content</h1>
+                    <h1>Content</h1>
+                    <h1>Content</h1>
+                    <h1>Content</h1>
+                    <h1>Content</h1>
+                    <h1>Content</h1>
+                    <h1>Content</h1>
+                    <h1>Content</h1>
+                    <h1>Content</h1>
+                    <h1>Content</h1>
+                    <h1>Content</h1>
+                    <h1>Content</h1>
+                </ng-container>
+            </app-annotation>
+        </div>
+
     </article>
 
     <article class="main__article">
         <h3>SVGs:</h3>
-        <app-music-player [audios]="songs" />
     </article>
 
     <article class="main__article">
-        <h3>Image Galery:</h3>
+        <h3>Image Gallery:</h3>
         <app-music-player [audios]="songs" />
     </article>
 
@@ -29,18 +72,15 @@
 
         <app-form [onSubmit]="onSubmitForm">
             <ng-container class="formInputs">
-                <app-input (getValue)="validateForm($event)" [name]="'name'" [placeHolder]="'Name'"/>
-                <app-input (getValue)="validateForm($event)" [name]="'email'" [placeHolder]="'E-mail'" [type]="'email'"/>
-                <app-input (getValue)="validateForm($event)" [name]="'message'" [placeHolder]="'Type your message'" [textArea]="true"/>
+                <app-input (getValue)="validateForm($event)" [name]="'name'" [placeHolder]="'Name'" />
+                <app-input (getValue)="validateForm($event)" [name]="'email'" [placeHolder]="'E-mail'"
+                    [type]="'email'" />
+                <app-input (getValue)="validateForm($event)" [name]="'message'" [placeHolder]="'Type your message'"
+                    [textArea]="true" />
             </ng-container>
 
             <ng-container class="formButtons">
-                <app-button 
-                    [text]="'Submit'" 
-                    [type]="'submit'" 
-                    [disabled]="true" 
-                    [enableWhen]="formIsValid"
-                />
+                <app-button [text]="'Submit'" [type]="'submit'" [disabled]="true" [enableWhen]="formIsValid" />
             </ng-container>
         </app-form>
 
@@ -56,34 +96,32 @@
         </app-modal>
     </article>
 
-
-
 </main>
 
 
 <app-footer>
-    <div class="footer__columns--items">
 
+    <div class="footer__columns--items">
         <div>
-            <p>Random</p>
-            <p>Random</p>
-            <p>Random</p>
-            <p>Random</p>
+            <p>Home</p>
+            <p>Services</p>
+            <p>Gallery</p>
+            <p>Contact</p>
         </div>
 
         <div>
-            <p>Random</p>
-            <p>Random</p>
-            <p>Random</p>
-            <p>Random</p>
+            <p>About Us</p>
+            <p>Testimonials</p>
+            <p>FAQ</p>
+            <p>Privacy Policy</p>
         </div>
 
     </div>
 
     <div class="footer__social--items">
-        <a href=""><mat-icon svgIcon="github"></mat-icon></a>
-        <a href=""><mat-icon svgIcon="telegram"></mat-icon></a>
-        <a href=""><mat-icon svgIcon="whatsapp"></mat-icon></a>
-        <a href=""><mat-icon svgIcon="yt"></mat-icon></a>
+        @for (social of socials; track social.id) {
+            <a [href]="social.link"><mat-icon class="icon-light" svgIcon="{{social.icon}}"></mat-icon></a>
+        }
     </div>
+
 </app-footer>

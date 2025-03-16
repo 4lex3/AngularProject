@@ -1,4 +1,18 @@
-<div class="annotation">
+<div
+    (mouseenter)="handleHover(true)" 
+    (mouseleave)="handleHover(false)"
+    (click)="handleCoverClick()"
+    class="annotation"
+>
 
+    <div 
+        class="annotation__content">
+        <ng-content select=".annotation--content"></ng-content>
+    </div>
 
+    <div 
+            [ngClass]="{'hidden': hiddenCover}" 
+    class="annotation__cover">
+        <ng-content select=".annotation--cover"></ng-content>
+    </div>
 </div>

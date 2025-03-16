@@ -7,9 +7,10 @@
 
 <main class="main">
 
-    <article class="main__article">
-        <h3>Music & video:</h3>
-        <app-music-player [audios]="songs" />
+    <article class="main__article--multimedia">
+        <div class=""><h3>Music & video:</h3></div>
+        <div class="main__article--multimedia__music"><app-music-player [audios]="songs"/></div>
+        <div class="main__article--multimedia__video"><app-video-player [videoSrc]="'video/thisCold.mp4'"/></div>
     </article>
 
     <article class="main__article">
@@ -24,7 +25,7 @@
 
 
     <article class="main__article--form">
-        <h3>Contact with me!</h3>
+        <h3>Contact me!</h3>
 
         <app-form [onSubmit]="onSubmitForm">
             <ng-container class="formInputs">
@@ -34,33 +35,30 @@
             </ng-container>
 
             <ng-container class="formButtons">
-
                 <app-button 
                     [text]="'Submit'" 
                     [type]="'submit'" 
                     [disabled]="true" 
                     [enableWhen]="formIsValid"
                 />
-
             </ng-container>
         </app-form>
 
         <app-modal [openModal]="openModal" (getModalState)="getModalState($event)">
             <ng-container class="modal__header">
-                <h3>KAJSDKAJDLAJSSJD</h3>
+                <p>Thank you so much... </p>
             </ng-container>
 
             <ng-container class="modal__body">
-                <h3>KAJSDKAJDLAJSSJD</h3>
+                <mat-icon class="icon-large">verified</mat-icon>
+                <h3>Message sent!</h3>
             </ng-container>
         </app-modal>
-
     </article>
 
 
 
 </main>
-
 
 
 <app-footer>

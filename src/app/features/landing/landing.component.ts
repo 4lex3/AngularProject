@@ -10,11 +10,12 @@ import { FormComponent } from "../../shared/components/form/form.component";
 import { InputComponent } from "../../shared/components/input/input.component";
 import { ButtonComponent } from "../../shared/components/button/button.component";
 import { ModalComponent } from "../../shared/components/modal/modal.component";
+import { VideoPlayerComponent } from "../../shared/components/video-player/video-player.component";
 
 
 @Component({
   selector: 'app-landing',
-  imports: [HeaderComponent, MatIconModule, FooterComponent, MusicPlayerComponent, FormComponent, InputComponent, ButtonComponent, ModalComponent],
+  imports: [HeaderComponent, MatIconModule, FooterComponent, MusicPlayerComponent, FormComponent, InputComponent, ButtonComponent, ModalComponent, VideoPlayerComponent],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.scss'
 })

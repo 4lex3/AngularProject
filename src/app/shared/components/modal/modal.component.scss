@@ -40,7 +40,11 @@
         }
 
         &--body {
-            
+            display: flex;            
+            flex-direction: column;
+            gap: 4rem;
+            justify-content: center;
+            align-items: center;
         }
     }
 

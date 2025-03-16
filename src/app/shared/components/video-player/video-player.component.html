@@ -1,1 +1,33 @@
-<video src="" controls></video>
+<div class="video-container">
+    <video #videoElement id="video" [src]="videoSrc"></video>
+
+    <div class="video-controls">
+
+        <div class="controls-center">
+            <div class="controls-center--right">
+                <button (click)="rewind()">
+                    <mat-icon>fast_rewind</mat-icon>
+                </button>
+                <button (click)="togglePlay()">
+                    <mat-icon>{{ isPlaying ? "pause" : "play_arrow" }}</mat-icon>
+                </button>
+                <button (click)="fastForward()">
+                    <mat-icon>fast_forward</mat-icon>
+                </button>
+
+                <button (click)="toggleMute()">
+                    <mat-icon>{{ isMuted ? "volume_off" : "volume_up" }}</mat-icon>
+                </button>
+
+            </div>
+            <button (click)="toggleFullscreen()">
+                <mat-icon>fullscreen</mat-icon>
+            </button>
+        </div>
+
+        <div class="progress-bar">
+            <input type="range" [(ngModel)]="progress" (input)="seekVideo($event)" min="0" max="100">
+        </div>
+
+    </div>
+</div>

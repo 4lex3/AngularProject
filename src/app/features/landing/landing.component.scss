@@ -26,7 +26,14 @@ a:hover {
     &__article {
         display: flex;
         flex-direction: column;
+        justify-content: center;
         gap: 1rem;
+
+        &--multimedia {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
 
         &--form {
             padding-top: 4rem;
@@ -37,7 +44,6 @@ a:hover {
             align-items: center;
         }
     }
-
 }
 
 
@@ -52,6 +58,45 @@ mat-icon {
 }
 
 .footer__columns--items {
-    display: flex; 
+    display: flex;
     justify-content: space-around;
 }
+
+
+@include screen(lg) {
+
+    .main__article {
+
+        &--multimedia {
+
+            display: grid;
+            grid-template-columns: 7fr 3fr;
+            grid-template-rows: 0.5fr 9.5fr;
+            
+            &__video {
+                grid-column: 1;
+                grid-row: 2;
+                max-width: 1300px;
+            } 
+
+            &__music {
+                grid-column: 2;
+                grid-row: 2;
+            }
+        }
+
+    }
+}
+
+// @include screen(xl) {
+//     .main {
+
+//         &__article {
+//             &--video {
+//                 background-color: red;
+//                 grid-template-columns: 2fr 4fr !important;
+//             }
+//         }
+//     }
+
+// }

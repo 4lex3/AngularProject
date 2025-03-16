@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+
+    <rect x="50" y="50" width="200" height="100" fill="gray"/>
+
+    <rect x="80" y="120" width="150" height="35" fill="red"/>
+    
+    <rect x="100" y="90" width="100" height="30" fill="red"/>
+
+    <circle cx="110" cy="160" r="20" fill="black"/>
+    <circle cx="110" cy="160" r="10" fill="#555353"/>
+
+    <circle cx="200" cy="160" r="20" fill="black"/>
+    <circle cx="200" cy="160" r="10" fill="#555353"/>
+
+    <rect x="105" y="95" width="40" height="25" fill="skyblue"/>
+    <rect x="155" y="95" width="40" height="25" fill="skyblue"/>
+
+    <rect x="79" y="125" width="10" height="5" fill="yellow"/>
+    <rect x="219" y="125" width="10" height="5" fill="yellow"/>
+
+</svg>

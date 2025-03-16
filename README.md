@@ -1,31 +1,38 @@
 # ProyectoMarcas
 ![enter image description here](https://raw.githubusercontent.com/4lex3/AngularProject/refs/heads/main/public/images/cover.png)
 Proyecto interactivo multimedia, creado en Angular y basada en su arquitectura. Encontraras multiples secciones y y podras ponerte en contacto.
-# ProyectoMarcas
-![enter image description here](https://raw.githubusercontent.com/4lex3/AngularProject/refs/heads/main/public/images/cover.png)
-Proyecto interactivo multimedia, creado en Angular y basada en su arquitectura. Encontraras multiples secciones y y podras ponerte en contacto.
 
 ## Features:
 ![enter image description here](https://raw.githubusercontent.com/4lex3/AngularProject/refs/heads/main/public/images/cover.png)
+
 - **Video:** Reproductor de video customizado para la paleta de colores de la pagina.
 - **Reproductor de Musica:** Reproductor de musica customizado y creado desde cero.
 - **Tooltip:** Encontraras un tooltip el cual te dira porque se usan y prefieren esos formatos en la web.
 </br>
+
 ---
+
 ![Gatos](https://raw.githubusercontent.com/4lex3/AngularProject/refs/heads/main/public/images/interactive.png)
+
 - **Carrusel Multimedia:** Carrusel interactivo de Imagenes curiosas y llamativas.
 - **SVGs:** Encontraras un apartado dedicado a la creacion y customizacion de elementos embebidos SVG.
 </br>
+
 ---
+
 ![form](https://raw.githubusercontent.com/4lex3/AngularProject/refs/heads/main/public/images/alert.png)
+
 - **Formulario:** Formulario validado e interactivo con alerta de envio de mensaje.
 </br>
+
 ---
+
 ![enter image description here](https://raw.githubusercontent.com/4lex3/AngularProject/refs/heads/main/public/images/responsive.png)
 
 - **Responsive Web Desingn:** Uso de Mediaqueries, Flexbox y Grid para pagina adaptativa a Mobile:
 
 ## Arquitectura: 
+
 ![arquitectura](https://raw.githubusercontent.com/4lex3/AngularProject/refs/heads/main/public/images/architecture.png)---
 
 - **SaSS:** Arquitectura Robusta de estilos y gestionada por archivos archivos globales e individuales realizados en el preprocesador SaSS.

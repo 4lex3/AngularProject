@@ -8,7 +8,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class IconsService {
 
-  public icons: string[] = ['github', 'telegram', 'whatsapp', 'yt', 'annotation'];
+  public icons: string[] = ['github', 'telegram', 'whatsapp', 'yt', 'annotation', 'auto', 'casa', 'robot'];
 
   constructor(private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer) {
     this.registerCustomIcons();

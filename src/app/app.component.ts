@@ -9,7 +9,7 @@ import { LandingComponent } from "./features/landing/landing.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, LandingComponent, CarouselComponent],
+  imports: [RouterOutlet, LandingComponent ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

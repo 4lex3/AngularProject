@@ -3,7 +3,6 @@ import { ModalComponent } from "../modal/modal.component";
 
 @Component({
   selector: 'app-form',
-  imports: [ModalComponent],
   templateUrl: './form.component.html',
   styleUrl: './form.component.scss'
 })

@@ -1,13 +1,13 @@
 <app-header [headerTitle]="'Multimedia Library'">
-    <a href="">Music & Video</a>
-    <a href="">SVGs</a>
-    <a href="">Images</a>
-    <a href="">Contact</a>
+    <a href="#muldimedia">Music & Video</a>
+    <a href="#svgs">SVGs</a>
+    <a href="#images">Images</a>
+    <a href="#contact">Contact</a>
 </app-header>
 
 <main class="main">
 
-    <article class="main__article--multimedia">
+    <article id="multimedia" class="main__article--multimedia">
 
         <h3>Music & video:</h3>
         <div class="main__article--multimedia__music"><app-music-player [audios]="songs" /></div>
@@ -65,7 +65,7 @@
 
     </article>
 
-    <article class="main__article">
+    <article id="svgs" class="main__article">
         <h3>SVGs:</h3>
         <div class="main__article--svg__items">
             <img src="svg/custom/auto.svg" alt="">
@@ -76,13 +76,13 @@
     </article>
 
 
-    <article class="main__article">
+    <article id="images" class="main__article">
         <h3>Image Gallery:</h3>
         <app-carousel [carouselObj]="carouselImages"/>
     </article>
 
 
-    <article class="main__article--form">
+    <article id="contact" class="main__article--form">
         <h3>Contact me!</h3>
 
         <app-form [onSubmit]="onSubmitForm">
